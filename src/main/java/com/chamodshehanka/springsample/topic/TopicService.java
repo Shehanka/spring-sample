@@ -2,6 +2,7 @@ package com.chamodshehanka.springsample.topic;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,11 +13,11 @@ import java.util.List;
 @Service
 public class TopicService {
 
-    private List<Topic> topicList = Arrays.asList(
+    private List<Topic> topicList = new ArrayList<>(Arrays.asList(
             new Topic("spring", "Spring Framework","Spring Framework Description"),
             new Topic("java", "Core Java", "Core Java Description"),
             new Topic("js", "JavaScript", "JavaScript Description")
-    );
+    ));
 
     List<Topic> getAllTopics(){
         return topicList;
