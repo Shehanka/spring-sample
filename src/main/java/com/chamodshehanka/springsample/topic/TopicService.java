@@ -18,8 +18,15 @@ public class TopicService {
             new Topic("js", "JavaScript", "JavaScript Description")
     );
 
-    public List<Topic> getAllTopics(){
+    List<Topic> getAllTopics(){
         return topicList;
     }
 
+    Topic getTopic(final String topicID){
+        return topicList.stream().filter(t -> t.getTopicID().equals(topicID)).findFirst().get();
+    }
+
+    void addTopic(Topic topic) {
+        topicList.add(topic);
+    }
 }
